@@ -5,21 +5,11 @@
   min-height: 100vh;
   padding: 3rem;
   font-size: 36px;
-  background-image: linear-gradient(
-      45deg,
-      #57c3ca 25%,
-      transparent 25%,
-      transparent 75%,
-      #57c3ca 75%
-    ),
-    linear-gradient(
-      45deg,
-      #57c3ca 25%,
-      transparent 25%,
-      transparent 75%,
-      #57c3ca 75%
-    );
-  background-position: 0 0, 50px 50px;
-  background-size: 100px 100px;
-  background-color: #fff;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.05) 10px,
+    transparent 10px,
+    transparent 20px
+  );
 }

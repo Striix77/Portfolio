@@ -4,6 +4,7 @@ import "./Navbar.css";
 
 function Navbar() {
   const [text, setText] = useState("Hi!");
+  const [showLinks, setShowLinks] = useState(false);
 
   useEffect(() => {
     const timers = [
@@ -11,6 +12,27 @@ function Navbar() {
       setTimeout(() => setText("Scroll down and get to know me!"), 6000),
     ];
     return () => timers.forEach((t) => clearTimeout(t));
+  }, []);
+
+  useEffect(() => {
+    const checkInitialScroll = () => {
+      if (window.scrollY > 200) {
+        setShowLinks(true);
+      }
+    };
+
+    checkInitialScroll();
+
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowLinks(true);
+      } else {
+        setShowLinks(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const { scrollY } = useScroll();
@@ -54,6 +76,8 @@ function Navbar() {
     { clamp: true }
   );
 
+  const opacity = useTransform(scrollY, [0, 200], ["1", "0"], { clamp: true });
+
   return (
     <motion.div
       className="navbar-wrapper"
@@ -88,15 +112,23 @@ function Navbar() {
       }}
     >
       <div className="navbar-content">
-        <motion.h1
-          key={text}
+        <motion.div
+          key={showLinks ? "links" : text}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
         >
-          {text}
-        </motion.h1>
+          {showLinks ? (
+            <nav className="nav-links">
+              <a href="#about">About</a>
+              <a href="#projects">Projects</a>
+              <a href="#contact">Contact</a>
+            </nav>
+          ) : (
+            <motion.h1 style={{ opacity: opacity }}>{text}</motion.h1>
+          )}
+        </motion.div>
       </div>
     </motion.div>
   );
