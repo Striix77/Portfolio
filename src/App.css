@@ -5,11 +5,19 @@
   min-height: 100vh;
   padding: 3rem;
   font-size: 36px;
-  background: repeating-linear-gradient(
+  /* background: repeating-linear-gradient(
     45deg,
     rgba(255, 255, 255, 0.05),
     rgba(255, 255, 255, 0.05) 10px,
     transparent 10px,
     transparent 20px
-  );
+  ); */
+}
+
+.content {
+  /* border: 1px solid red; */
+  display: flex;
+  margin-top: 100vh;
+  width: 100%;
+  min-height: 100vh;
 }

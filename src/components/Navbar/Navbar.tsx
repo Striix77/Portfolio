@@ -71,7 +71,7 @@ function Navbar() {
     [0, 200],
     [
       "brightness(1.1) blur(1px) url(#glass-distortion)",
-      "brightness(1.1) blur(3px) url(#glass-distortion)",
+      "brightness(1.1) blur(1.5px) url(#glass-distortion)",
     ],
     { clamp: true }
   );
