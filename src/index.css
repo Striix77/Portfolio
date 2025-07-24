@@ -11,8 +11,10 @@
 
   color-scheme: light dark;
   color: #d7d7d7;
-  background-color: #273f4f;
-  /* background-color: #ddf2fd; */
+  background: linear-gradient(135deg, #273f4f 0%, #1e3a44 50%, #0f2027 100%);
+  background-attachment: fixed;
+  background-size: 400% 400%;
+  animation: gradientBackground 15s ease infinite;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -50,6 +52,40 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(1.2rem, 3.1vw, 1.7rem);
+}
+
+h3 {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+.liquid-glass {
+  filter: drop-shadow(-8px -10px 46px #0000005f);
+  backdrop-filter: brightness(1.1) url(#glass-distortion);
+  background: rgba(192, 209, 217, 0);
+  border-radius: 7px;
+}
+
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 7px;
+  -webkit-box-shadow: inset 2px 2px 0px -2px rgba(180, 180, 180, 0.2),
+    inset 0 0 3px 1px rgba(180, 180, 180, 0.2);
+  box-shadow: inset 6px 6px 0px -6px rgba(180, 180, 180, 0.2),
+    inset 0 0 8px 1px rgba(180, 180, 180, 0.2);
+  pointer-events: none;
+  /* rgba(255, 255, 255, 0.7) */
 }
 
 button {

@@ -80,7 +80,7 @@ function Navbar() {
 
   return (
     <motion.div
-      className="navbar-wrapper"
+      className="navbar-wrapper liquid-glass"
       style={{
         position: "fixed",
         top: 0,
@@ -126,7 +126,7 @@ function Navbar() {
               <a href="#contact">Contact</a>
             </nav>
           ) : (
-            <motion.h1 style={{ opacity: opacity }}>{text}</motion.h1>
+            <motion.h2 style={{ opacity: opacity }}>{text}</motion.h2>
           )}
         </motion.div>
       </div>
