@@ -21,14 +21,12 @@ function Hero() {
     document.body.removeChild(link);
   };
 
-  // Text slides in from left as user scrolls into view
   const textXRaw = useTransform(scrollYProgress, [0, 0.5], [-500, 0], {
     clamp: true,
   });
 
   const textX = useSpring(textXRaw, { stiffness: 300, damping: 50 });
 
-  // Image scales and rotates slightly
   const imageScaleRaw = useTransform(scrollYProgress, [0, 0.5], [0.5, 1]);
   const imageScale = useSpring(imageScaleRaw, { stiffness: 300, damping: 50 });
   // const barScaleRaw = useTransform(scrollYProgress, [0, 0.5], [0.5, 1]);
@@ -36,10 +34,10 @@ function Hero() {
   // const imageRotate = useTransform(scrollYProgress, [0, 1], [0, 5]);
 
   // Parallax effect - hero moves slower than scroll
-  const heroY = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  // const heroY = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   return (
-    <motion.div className="hero" ref={heroRef} style={{ y: heroY }}>
+    <motion.div className="hero" ref={heroRef} style={{}}>
       {/* <motion.div style={{ scale: barScale }} className="hero-bar-top" /> */}
       <motion.div
         className="hero-info"
@@ -50,12 +48,14 @@ function Hero() {
           }),
         }}
       >
-        <h1> Hi! I'm Erik.</h1>
-        <h2>
-          Let's reshape the future of development.
-          <br />
-          Together.
-        </h2>
+        <div className="hero-title">
+          <h1>
+            Let's reshape the future <br />
+            of development.
+            <br />
+            Together.
+          </h1>
+        </div>
         <div className="hero-availability-card liquid-glass">
           <div className="hero-gradient"></div>
           <FaCircle

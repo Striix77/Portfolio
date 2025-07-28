@@ -1,0 +1,57 @@
+.about-container {
+  /* border: 1px solid blue; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 150px;
+  padding-bottom: 0px;
+  height: 100vh;
+
+  p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+  }
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+  width: 100%;
+  padding: 70px;
+  background-color: #1f69911f;
+}
+
+.description-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.description-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  position: relative;
+  top: -5px;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.skills-cloud {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

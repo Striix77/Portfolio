@@ -1,4 +1,5 @@
 import "./App.css";
+import About from "./components/About/About";
 import Background from "./components/Background/Background";
 import Hero from "./components/Hero/Hero";
 import LiquidFilter from "./components/LiquidFilter";
@@ -12,6 +13,7 @@ function App() {
       <Navbar />
       <div className="content">
         <Hero />
+        <About />
       </div>
     </div>
   );
