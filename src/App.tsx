@@ -4,6 +4,7 @@ import Background from "./components/Background/Background";
 import Hero from "./components/Hero/Hero";
 import LiquidFilter from "./components/LiquidFilter";
 import Navbar from "./components/Navbar/Navbar";
+import Projects from "./components/Projects/Projects";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <div className="content">
         <Hero />
         <About />
+        <Projects />
       </div>
     </div>
   );
