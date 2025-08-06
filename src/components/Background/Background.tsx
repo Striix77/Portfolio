@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import "./Background.css";
 
 function Background() {
-  const starCount = 70;
+  const starCount = 40;
   const stars = Array.from({ length: starCount }, (_, index) => {
     const size = Math.random() * 3 + 1;
     const top = Math.random() * 100;
