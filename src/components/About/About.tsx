@@ -2,6 +2,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { IconCloud } from "../ui/magicui/icon-cloud";
 import "./About.css";
 import { Button } from "../ui/button";
+import { motion } from "framer-motion";
 
 function About() {
   const handleNavigateToGitHub = () => {
@@ -17,7 +18,13 @@ function About() {
 
   return (
     <div className="about-container" id="about">
-      <div className="description liquid-glass">
+      <motion.div
+        className="description liquid-glass"
+        initial={{ opacity: 0, x: -70 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
+      >
         <div className="description-title">
           <h2>Hi! I'm Erik,</h2>
           <div className="description-icons">
@@ -53,8 +60,14 @@ function About() {
           take initiative, lead when needed, and bring positive energy into
           every project.
         </p>
-      </div>
-      <div className="skills-cloud">
+      </motion.div>
+      <motion.div
+        className="skills-cloud"
+        initial={{ opacity: 0, x: 70 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1, ease: "easeInOut", delay: 0.2 }}
+      >
         <IconCloud
           images={[
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
@@ -77,7 +90,7 @@ function About() {
             "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
           ]}
         />
-      </div>
+      </motion.div>
     </div>
   );
 }

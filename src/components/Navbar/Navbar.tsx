@@ -8,8 +8,7 @@ function Navbar() {
 
   useEffect(() => {
     const timers = [
-      setTimeout(() => setText("I'm glad you're here!"), 3000),
-      setTimeout(() => setText("Scroll down and get to know me!"), 6000),
+      setTimeout(() => setText("Scroll down and get to know me!"), 3000),
     ];
     return () => timers.forEach((t) => clearTimeout(t));
   }, []);

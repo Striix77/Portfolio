@@ -35,7 +35,7 @@ const projects = [
 
 function Projects() {
   return (
-    <section className="projects-container" id="projects">
+    <div className="projects-container" id="projects">
       <motion.div
         className="projects-header"
         initial={{ opacity: 0, y: 50 }}
@@ -145,7 +145,7 @@ function Projects() {
           </motion.div>
         ))}
       </motion.div>
-    </section>
+    </div>
   );
 }
 
