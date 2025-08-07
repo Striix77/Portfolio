@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./ContactCard.css";
 import { AnimatePresence, motion } from "motion/react";
 import { IoClose } from "react-icons/io5";
@@ -6,6 +6,7 @@ import { Input } from "../input";
 import { Textarea } from "../textarea";
 import { ScrollArea } from "../scroll-area";
 import { Button } from "../button";
+import emailjs from "@emailjs/browser";
 
 type ContactCardProps = {
   width: string;
@@ -14,6 +15,55 @@ type ContactCardProps = {
 
 function ContactCard({ width, height }: ContactCardProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [isSent, setIsSent] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSending(true);
+    if (form.current) {
+      emailjs
+        .sendForm("service_zawwgnp", "template_x6qmnkv", form.current, {
+          publicKey: "iFOh-Kx3j62w747ty",
+        })
+        .then(
+          () => {
+            console.log("SUCCESS!");
+            form.current?.reset();
+            setIsSent(true);
+            setIsSending(false);
+            setTimeout(() => {
+              setIsOpen(false);
+              setIsSent(false);
+            }, 2000);
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+            setIsSending(false);
+            setIsError(true);
+            setTimeout(() => {
+              setIsOpen(false);
+              setIsSent(false);
+              setIsError(false);
+            }, 2000);
+          }
+        );
+      // setTimeout(() => {
+      //   console.log("Email sent successfully!");
+      //   form.current?.reset();
+      //   setIsSent(true);
+      //   setIsSending(false);
+      //   setTimeout(() => {
+      //     setIsOpen(false);
+      //     setIsSent(false);
+      //   }, 2000);
+      // }, 1000); // Simulating email sending delay
+    } else {
+      console.log("Form reference is null.");
+    }
+  };
 
   return (
     <AnimatePresence>
@@ -84,17 +134,14 @@ function ContactCard({ width, height }: ContactCardProps) {
               <h1>Contact Me!</h1>
               <form
                 className="contact-form"
+                ref={form}
+                onSubmit={sendEmail}
                 style={{
                   display: "flex",
                   flexDirection: "column",
                   gap: "16px",
                   maxWidth: 400,
                   margin: "0 auto",
-                }}
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  // Add your email sending logic here
-                  alert("Message sent!");
                 }}
               >
                 <Input
@@ -145,21 +192,25 @@ function ContactCard({ width, height }: ContactCardProps) {
                     border: "1px solid #ccc",
                   }}
                 />
+                <input
+                  type="hidden"
+                  name="time"
+                  value={new Date().toDateString()}
+                />
                 <Button
+                  className={`contact-button ${isSending ? "loading" : ""} ${
+                    isSent ? "sent" : ""
+                  } ${isError ? "error" : ""}`}
                   type="submit"
                   variant={"liquid"}
-                  style={{
-                    padding: "10px",
-                    borderRadius: "4px",
-                    border: "none",
-                    color: "#fff",
-                    fontWeight: "bold",
-                    cursor: "pointer",
-                    width: "100%",
-                    backgroundColor: "rgba(0, 139, 208, 0.18)",
-                  }}
                 >
-                  Send
+                  {isSending
+                    ? "Sending..."
+                    : isSent
+                    ? "Sent!"
+                    : isError
+                    ? "Error!"
+                    : "Send"}
                 </Button>
               </form>
             </div>

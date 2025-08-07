@@ -80,7 +80,17 @@ function Hero() {
             Download CV
             <LuDownload />
           </Button>
-          <Button className="hero-button" variant="liquid" size="lg">
+          <Button
+            className="hero-button"
+            variant="liquid"
+            size="lg"
+            onClick={() => {
+              const element = document.getElementById("about");
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
             Find out more
             <FaArrowDownLong />
           </Button>

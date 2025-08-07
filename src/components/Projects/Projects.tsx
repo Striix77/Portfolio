@@ -43,10 +43,8 @@ function Projects() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="projects-title">My Projects</h2>
-        <p className="projects-subtitle">
-          Here are some of the projects I've worked on
-        </p>
+        <h2 className="projects-title">Projects</h2>
+        <p className="projects-subtitle">Some of the projects I've worked on</p>
       </motion.div>
 
       <motion.div className="projects-grid">
