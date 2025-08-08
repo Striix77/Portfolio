@@ -6,30 +6,72 @@ import { motion } from "motion/react";
 const projects = [
   {
     id: 1,
-    title: "Portfolio Website",
+    title: "Order Tracker",
     description:
-      "A modern React portfolio with smooth animations and responsive design. Built with TypeScript, Framer Motion, and Tailwind CSS.",
-    image: "https://placehold.co/1280x720",
-    github: "https://github.com/yourusername/portfolio",
-    technologies: ["React", "TypeScript", "Framer Motion", "Tailwind"],
+      "A modern, account-based single-page React application for tracking orders, featuring a Spring-powered backend, PWA support for installability, and role-based access including admin privileges.",
+    image: "public/orderTracker.png",
+    github: "https://github.com/Striix77/Order-Tracker",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Motion",
+      "Tailwind",
+      "Spring Boot",
+      "SQL",
+      "PWA",
+      "Role-based Access",
+    ],
   },
   {
     id: 2,
-    title: "E-commerce App",
+    title: "Milo",
     description:
-      "Full-stack e-commerce application with user authentication, payment processing, and admin dashboard.",
-    image: "https://placehold.co/1280x720",
-    github: "https://github.com/yourusername/ecommerce",
-    technologies: ["Next.js", "Node.js", "MongoDB", "Stripe"],
+      "A fast-paced 2D pixel-art platformer developed in Unity where players take control of a heroic dog, battling through relentless enemy waves to earn high scores and unlock powerful upgrades.",
+    image: "public/Milo.png",
+    github: "https://github.com/Striix77/Milo",
+    technologies: [
+      "Unity",
+      "C#",
+      "2D Pixel Art",
+      "Custom Physics",
+      "Platformer",
+      "Unlockable Upgrades",
+    ],
   },
   {
     id: 3,
-    title: "Task Management Tool",
+    title: "Portfolio Creator",
     description:
-      "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-    image: "https://placehold.co/1280x720",
-    github: "https://github.com/yourusername/task-manager",
-    technologies: ["Vue.js", "Firebase", "Vuetify"],
+      "A single-page Angular application that lets users create personalized portfolio pages, generate PPTX presentations, and manage accounts with admin privileges, advanced user search, and filtering.",
+    image: "public/AngularPortfolio.png",
+    github: "",
+    technologies: [
+      "Angular",
+      "TypeScript",
+      "Tailwind",
+      "JSON",
+      "Admin Privileges",
+      "User Search",
+      "PptxGenJS",
+    ],
+  },
+  {
+    id: 4,
+    title: "Swinging Simulator",
+    description:
+      "A Unity 3D swinging simulator that lets players experience fluid first- or third-person swinging mechanics, combining immersive physics with dynamic camera perspectives for a thrilling traversal experience.",
+    image: "public/swing.png",
+    github: "https://github.com/Striix77/SwingingGame",
+    technologies: ["Unity", "C#", "3D", "Physics", "Camera", "Traversal"],
+  },
+  {
+    id: 5,
+    title: "Miniature Database Management System",
+    description:
+      "A collaborative mini DBMS project that merges Python's flexibility with Java's performance to provide an efficient and user-friendly tool for organizing and managing data.",
+    image: "public/dbms.png",
+    github: "",
+    technologies: ["Python", "Java", "MongoDB", "Collaboration"],
   },
 ];
 
@@ -74,18 +116,20 @@ function Projects() {
                       </span>
                     ))}
                   </div>
-                  <div
-                    className="project-links"
-                    style={{ justifyContent: "flex-end" }}
-                  >
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                  {project.github !== "" && (
+                    <div
+                      className="project-links"
+                      style={{ justifyContent: "flex-start" }}
                     >
-                      <FaGithub className="icon" />
-                    </a>
-                  </div>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaGithub className="icon" />
+                      </a>
+                    </div>
+                  )}
                 </div>
                 <motion.img
                   src={project.image}
@@ -125,18 +169,20 @@ function Projects() {
                       </span>
                     ))}
                   </div>
-                  <div
-                    className="project-links"
-                    style={{ justifyContent: "flex-start" }}
-                  >
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                  {project.github !== "" && (
+                    <div
+                      className="project-links"
+                      style={{ justifyContent: "flex-start" }}
                     >
-                      <FaGithub className="icon" />
-                    </a>
-                  </div>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaGithub className="icon" />
+                      </a>
+                    </div>
+                  )}
                 </div>
               </>
             )}
