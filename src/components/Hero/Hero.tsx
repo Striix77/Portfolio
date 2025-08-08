@@ -101,7 +101,7 @@ function Hero() {
         <motion.img
           style={{ scale: imageScale }}
           id="hero-image"
-          src="src/assets/me1.png"
+          src="/me1.png"
           alt="Erik"
         />
       </motion.div>

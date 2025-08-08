@@ -69,7 +69,7 @@ const projects = [
     title: "Miniature Database Management System",
     description:
       "A collaborative mini DBMS project that merges Python's flexibility with Java's performance to provide an efficient and user-friendly tool for organizing and managing data.",
-    image: "public/dbms.png",
+    image: "/dbms.png",
     github: "",
     technologies: ["Python", "Java", "MongoDB", "Collaboration"],
   },
