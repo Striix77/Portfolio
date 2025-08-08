@@ -5,6 +5,18 @@ import "./Navbar.css";
 function Navbar() {
   const [text, setText] = useState("Hi!");
   const [showLinks, setShowLinks] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const timers = [
@@ -49,17 +61,25 @@ function Navbar() {
     mass: 1.2,
   });
 
-  const rawWidth = useTransform(scrollY, [0, 200], ["50vw", "60vw"], {
-    clamp: true,
-  });
+  // Responsive width based on screen size
+  const rawWidth = useTransform(
+    scrollY,
+    [0, 200],
+    isMobile ? ["90vw", "95vw"] : ["50vw", "60vw"],
+    { clamp: true }
+  );
   const width = useSpring(rawWidth, {
     stiffness: 200,
     damping: 15,
   });
 
-  const rawHeight = useTransform(scrollY, [0, 200], ["15vh", "6vh"], {
-    clamp: true,
-  });
+  // Responsive height based on screen size
+  const rawHeight = useTransform(
+    scrollY,
+    [0, 200],
+    isMobile ? ["10vh", "8vh"] : ["15vh", "6vh"],
+    { clamp: true }
+  );
   const height = useSpring(rawHeight, {
     stiffness: 150,
     damping: 20,

@@ -9,7 +9,7 @@ const projects = [
     title: "Order Tracker",
     description:
       "A modern, account-based single-page React application for tracking orders, featuring a Spring-powered backend, PWA support for installability, and role-based access including admin privileges.",
-    image: "public/orderTracker.png",
+    image: "/orderTracker.png",
     github: "https://github.com/Striix77/Order-Tracker",
     technologies: [
       "React",
@@ -27,7 +27,7 @@ const projects = [
     title: "Milo",
     description:
       "A fast-paced 2D pixel-art platformer developed in Unity where players take control of a heroic dog, battling through relentless enemy waves to earn high scores and unlock powerful upgrades.",
-    image: "public/Milo.png",
+    image: "/Milo.png",
     github: "https://github.com/Striix77/Milo",
     technologies: [
       "Unity",
@@ -43,7 +43,7 @@ const projects = [
     title: "Portfolio Creator",
     description:
       "A single-page Angular application that lets users create personalized portfolio pages, generate PPTX presentations, and manage accounts with admin privileges, advanced user search, and filtering.",
-    image: "public/AngularPortfolio.png",
+    image: "/AngularPortfolio.png",
     github: "",
     technologies: [
       "Angular",
@@ -60,7 +60,7 @@ const projects = [
     title: "Swinging Simulator",
     description:
       "A Unity 3D swinging simulator that lets players experience fluid first- or third-person swinging mechanics, combining immersive physics with dynamic camera perspectives for a thrilling traversal experience.",
-    image: "public/swing.png",
+    image: "/swing.png",
     github: "https://github.com/Striix77/SwingingGame",
     technologies: ["Unity", "C#", "3D", "Physics", "Camera", "Traversal"],
   },
@@ -119,7 +119,7 @@ function Projects() {
                   {project.github !== "" && (
                     <div
                       className="project-links"
-                      style={{ justifyContent: "flex-start" }}
+                      style={{ justifyContent: "flex-end" }}
                     >
                       <a
                         href={project.github}
@@ -134,11 +134,6 @@ function Projects() {
                 <motion.img
                   src={project.image}
                   alt={project.title}
-                  style={{
-                    width: "50vw",
-                    height: "auto",
-                    borderRadius: "10px",
-                  }}
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 />
@@ -148,11 +143,6 @@ function Projects() {
                 <motion.img
                   src={project.image}
                   alt={project.title}
-                  style={{
-                    width: "50vw",
-                    height: "auto",
-                    borderRadius: "10px",
-                  }}
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.3 }}
                 />

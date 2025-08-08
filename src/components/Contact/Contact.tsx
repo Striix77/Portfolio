@@ -13,11 +13,12 @@ function Contact() {
       transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
     >
       <div className="contact-header">
-        <h2 className="contact-title" style={{ margin: "3vh" }}>
-          Ready to make a change?
-        </h2>
+        <h2 className="contact-title">Ready to make a change?</h2>
       </div>
-      <ContactCard width="20vw" height="10vh" />
+      <ContactCard
+        width="clamp(200px, 20vw, 280px)"
+        height="clamp(50px, 10vh, 70px)"
+      />
     </motion.div>
   );
 }

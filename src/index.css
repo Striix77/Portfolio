@@ -56,6 +56,24 @@
 
 html {
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
 }
 
 h1 {
@@ -63,20 +81,17 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.5rem, 3.1vw, 3rem);
+  font-size: clamp(1.2rem, 3.1vw, 3rem);
 }
 
 h3 {
   font-size: clamp(1rem, 2vw, 1.3rem);
 }
 
-p {
-  font-size: clamp(0.9rem, 1.5vw, 1.7rem);
-}
-
 .liquid-glass {
   filter: drop-shadow(-8px -10px 46px #0000005f);
   backdrop-filter: brightness(1.1) url(#glass-distortion);
+  -webkit-backdrop-filter: brightness(1.1) url(#glass-distortion);
   background: rgba(192, 209, 217, 0);
   border-radius: 7px;
 }

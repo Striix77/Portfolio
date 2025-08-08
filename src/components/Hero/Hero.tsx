@@ -21,24 +21,17 @@ function Hero() {
     document.body.removeChild(link);
   };
 
-  const textXRaw = useTransform(scrollYProgress, [0, 0.5], [-500, 0], {
+  const textXRaw = useTransform(scrollYProgress, [0, 0.4], [-500, 0], {
     clamp: true,
   });
 
   const textX = useSpring(textXRaw, { stiffness: 300, damping: 50 });
 
-  const imageScaleRaw = useTransform(scrollYProgress, [0, 0.5], [0.5, 1]);
+  const imageScaleRaw = useTransform(scrollYProgress, [0, 0.4], [0.5, 1]);
   const imageScale = useSpring(imageScaleRaw, { stiffness: 300, damping: 50 });
-  // const barScaleRaw = useTransform(scrollYProgress, [0, 0.5], [0.5, 1]);
-  // const barScale = useSpring(barScaleRaw, { stiffness: 300, damping: 50 });
-  // const imageRotate = useTransform(scrollYProgress, [0, 1], [0, 5]);
-
-  // Parallax effect - hero moves slower than scroll
-  // const heroY = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   return (
     <motion.div className="hero" ref={heroRef} style={{}}>
-      {/* <motion.div style={{ scale: barScale }} className="hero-bar-top" /> */}
       <motion.div
         className="hero-info"
         style={{
@@ -63,7 +56,6 @@ function Hero() {
               color: "#28a745",
               marginRight: "0.3rem",
               position: "relative",
-              top: "0.5rem",
               fontSize: "0.5rem",
             }}
           />
@@ -104,8 +96,6 @@ function Hero() {
           opacity: useTransform(scrollYProgress, [0, 0.4], [0, 1], {
             clamp: true,
           }),
-
-          // rotate: imageRotate,
         }}
       >
         <motion.img
@@ -115,7 +105,6 @@ function Hero() {
           alt="Erik"
         />
       </motion.div>
-      {/* <motion.div style={{ scale: barScale }} className="hero-bar-bottom" /> */}
     </motion.div>
   );
 }
