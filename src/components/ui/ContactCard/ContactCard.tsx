@@ -71,8 +71,8 @@ function ContactCard({ width, height }: ContactCardProps) {
         layout
         className={`expandable-card liquid-glass ${isOpen ? "open" : ""}`}
         onClick={() => !isOpen && setIsOpen(true)}
-        initial={{}}
-        animate={{}}
+        whileHover={!isOpen ? { scale: 1.05, y: -5 } : undefined}
+        whileTap={!isOpen ? { scale: 0.95 } : undefined}
         transition={{
           layout: { duration: 1, type: "spring", bounce: 0.3 },
         }}
@@ -86,7 +86,7 @@ function ContactCard({ width, height }: ContactCardProps) {
           cursor: isOpen ? "default" : "pointer",
           backgroundColor: isOpen
             ? "rgba(2, 33, 45, 0.51)"
-            : "rgba(240, 248, 255, 0.096)",
+            : "rgba(0, 121, 169, 0.2)",
           backdropFilter: isOpen
             ? "brightness(1.1) blur(7px) url(#glass-distortion)"
             : "brightness(1.1) blur(1px) url(#glass-distortion)",

@@ -122,6 +122,7 @@ function Projects() {
                       style={{ justifyContent: "flex-end" }}
                     >
                       <a
+                        className="liquid-glass"
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -165,6 +166,7 @@ function Projects() {
                       style={{ justifyContent: "flex-start" }}
                     >
                       <a
+                        className="liquid-glass"
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"

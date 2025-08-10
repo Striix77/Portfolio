@@ -239,8 +239,7 @@
 }
 
 .tech-badge:hover {
-  background-color: rgba(27, 199, 241, 0.2);
-  transform: translateY(-1px);
+  background-color: rgba(27, 199, 241, 0.15);
 }
 
 /* Mobile tech badge adjustments */
