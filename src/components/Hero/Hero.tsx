@@ -14,8 +14,8 @@ function Hero() {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/Muzsi Erik.pdf";
-    link.download = "Muzsi Erik.pdf";
+    link.href = "/Erik_Muzsi.pdf";
+    link.download = "Erik_Muzsi.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

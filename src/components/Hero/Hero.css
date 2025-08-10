@@ -147,7 +147,7 @@
   height: 100%;
   background: linear-gradient(0deg, #02d785, #dee7ec00);
   opacity: 0.1;
-  animation: bgOpacity 2s infinite alternate;
+  animation: bgOpacity 1.5s infinite alternate;
 }
 
 @keyframes bgOpacity {
@@ -155,7 +155,7 @@
     opacity: 0.1;
   }
   100% {
-    opacity: 0.2;
+    opacity: 0.3;
   }
 }
 
@@ -211,6 +211,7 @@
   }
 }
 
-#download-cv {
+#download-cv,
+.hero-button {
   background: linear-gradient(0deg, #028cd73d, #273f4f08);
 }
