@@ -6,21 +6,12 @@ import { motion } from "motion/react";
 const projects = [
   {
     id: 1,
-    title: "Order Tracker",
+    title: "Job Tracking Mobile App",
     description:
-      "A modern, account-based single-page React application for tracking orders, featuring a Spring-powered backend, PWA support for installability, and role-based access including admin privileges.",
-    image: "/orderTracker.png",
-    github: "https://github.com/Striix77/Order-Tracker",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Motion",
-      "Tailwind",
-      "Spring Boot",
-      "SQL",
-      "PWA",
-      "Role-based Access",
-    ],
+      "A cross-platform mobile app for managing job applications, which allows adding, editing, and deleting job entries, tracking interview dates, and filtering applications by status.",
+    image: "/JobTracker.png",
+    github: "https://github.com/Striix77/Jobby",
+    technologies: ["React Native", "TypeScript", "Expo"],
   },
   {
     id: 2,
@@ -40,6 +31,24 @@ const projects = [
   },
   {
     id: 3,
+    title: "Order Tracker",
+    description:
+      "A modern, account-based single-page React application for tracking orders, featuring a Spring-powered backend, PWA support for installability, and role-based access including admin privileges.",
+    image: "/orderTracker.png",
+    github: "https://github.com/Striix77/Order-Tracker",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Motion",
+      "Tailwind",
+      "Spring Boot",
+      "SQL",
+      "PWA",
+      "Role-based Access",
+    ],
+  },
+  {
+    id: 4,
     title: "Portfolio Creator",
     description:
       "A single-page Angular application that lets users create personalized portfolio pages, generate PPTX presentations, and manage accounts with admin privileges, advanced user search, and filtering.",
@@ -56,7 +65,7 @@ const projects = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     title: "Swinging Simulator",
     description:
       "A Unity 3D swinging simulator that lets players experience fluid first- or third-person swinging mechanics, combining immersive physics with dynamic camera perspectives for a thrilling traversal experience.",
@@ -65,7 +74,7 @@ const projects = [
     technologies: ["Unity", "C#", "3D", "Physics", "Camera", "Traversal"],
   },
   {
-    id: 5,
+    id: 6,
     title: "Miniature Database Management System",
     description:
       "A collaborative mini DBMS project that merges Python's flexibility with Java's performance to provide an efficient and user-friendly tool for organizing and managing data.",
